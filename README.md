@@ -1,9 +1,10 @@
 # Team Profile Generator
   
+  ### Homework 10 - Topic: Object-Oriented Programming
 
   ## Description
 
-  Homework 10 - Topic: Object-Oriented Programming
+  This is a team profile generator
 
   ## Table of Contents
 
