@@ -1,0 +1,19 @@
+{
+  "name": "hw-10-team-profile",
+  "version": "1.0.0",
+  "description": "Team profile generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpugmire/hw-10-team-profile.git"
+  },
+  "author": "Joseph Pugmire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpugmire/hw-10-team-profile/issues"
+  },
+  "homepage": "https://github.com/jpugmire/hw-10-team-profile#readme"
+}
