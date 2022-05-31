@@ -33,10 +33,6 @@
 
   Created by Joseph Pugmire
 
-  ## Tests
-
-  To run tests, run the following:
-
   ```
   
   ```
