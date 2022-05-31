@@ -27,15 +27,9 @@
 
   Install required dependencies with above command, then use ``` node index ``` to run the application
 
-  
-
   ## Contributing
 
   Created by Joseph Pugmire
-
-  ```
-  
-  ```
 
   ## Questions
 
