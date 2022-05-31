@@ -4,7 +4,7 @@
 
   ## Description
 
-  This is a team profile generator
+  This is a team profile generator that runs in the command line. It will create an html page with a list of team members you create on the command line.
 
   ## Table of Contents
 
