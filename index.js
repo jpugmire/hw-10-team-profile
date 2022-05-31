@@ -14,8 +14,8 @@ const distPath = path.join(DIST, 'team.html');
 const render = require('./src/page-model.js');
 
 //create variables to track team members and id's
-const teamMembers = [];
-const idArray = [];
+let teamMembers = [];
+let idArray = [];
 
 //inform user its starting
 console.log('\nTeam Generator\nUse `npm reset` to reset the dist/ folder\n');
@@ -81,8 +81,8 @@ function menu() {
                     userInfo.managerEmail,
                     userInfo.managerOfficeNumber
                 );
-                teamMembers.push(manager);
-                idArray.push(userInfo.managerId);
+                teamMembers = [...teamMembers, manager];
+                idArray = [...idArray, userInfo.managerId];
                 menuOptions();
             });
     }
@@ -100,20 +100,18 @@ function menu() {
                 ]
             }
         ]).then((userRes) => {
-            switch (userRes.memberChoice) {
-                case 'Engineer':
-                    addEngineer();
-                    break;
-                case 'Intern':
-                    addIntern();
-                    break;
-                default:
-                    buildTeam();
+            if(userRes.memberChoice === 'Engineer'){
+                createEngineer();
             }
+            else if (userRes.memberChoice === 'Intern'){
+                createIntern();
+            }
+            else
+                buildTeam();
         });
     }
 
-    function addEngineer() {
+    function createEngineer() {
         inquirer.prompt([
             {
                 type: 'input',
@@ -170,13 +168,13 @@ function menu() {
                 userRes.engineerEmail,
                 userRes.engineerGithub
               );
-              teamMembers.push(engineer);
-              idArray.push(userRes.engineerId);
+              teamMembers = [...teamMembers, engineer];
+              idArray = [...idArray, userRes.engineerId];
               menuOptions();
         });
     }
 
-    function addIntern() {
+    function createIntern() {
         inquirer.prompt([
             {
                 type: 'input',
@@ -233,8 +231,8 @@ function menu() {
                 userRes.internEmail,
                 userRes.internSchool
               );
-              teamMembers.push(intern);
-              idArray.push(userRes.internId);
+              teamMembers = [...teamMembers, intern];
+              idArray = [...idArray, userRes.internId];
               menuOptions();
         });
     }

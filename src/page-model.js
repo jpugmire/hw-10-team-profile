@@ -6,7 +6,7 @@ function generateTeam (team) {
         return `
         <div class="card">
             <div class="card-header">
-                <h2>${manager.getName()}</h2>
+                <h2>${manager.name}</h2>
                 <h3>${manager.getRole()}</h3>
             </div>
             <div class="card-body">
@@ -52,24 +52,44 @@ function generateTeam (team) {
         `;
     };
 
-    const html = [];
+    let html;
 
-    html.push(team
-        .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManager(manager))
-    );
-    html.push(team
-        .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => generateEngineer(engineer))
-        .join("")
-    );
-    html.push(team
-        .filter(employee => employee.getRole() === "Intern")
-        .map(intern => generateIntern(intern))
-        .join("")
-    );
+    //get mgr
+    //add to html
 
-    return html.join("");
+    let manager = team.filter(employee => employee.getRole() === "Manager");
+    html += generateManager(manager[0]);
+
+    //get engineers
+    let eng = team.filter(employee => employee.getRole() === "Engineer");
+    let engHtml = eng.map(e => generateEngineer(e)).join("");
+
+    //get interns
+    let interns = team.filter(employee => employee.getRole() === "Intern");
+    let internHtml = interns.map(e => generateIntern(e)).join("");
+
+    let finalHtml = (html += engHtml += internHtml)
+    return finalHtml;
+    //team object holds employees
+    //employee.getRole
+    
+
+    // html.push(team
+    //     .filter(employee => employee.getRole() === "Manager")
+    //     .map(manager => generateManager(manager))
+    // );
+    // html.push(team
+    //     .filter(employee => employee.getRole() === "Engineer")
+    //     .map(engineer => generateEngineer(engineer))
+    //     .join("")
+    // );
+    // html.push(team
+    //     .filter(employee => employee.getRole() === "Intern")
+    //     .map(intern => generateIntern(intern))
+    //     .join("")
+    // );
+
+    // return html.join("");
 
 }
 
