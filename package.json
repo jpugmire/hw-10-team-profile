@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jpugmire/hw-10-team-profile/issues"
   },
-  "homepage": "https://github.com/jpugmire/hw-10-team-profile#readme"
+  "homepage": "https://github.com/jpugmire/hw-10-team-profile#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
